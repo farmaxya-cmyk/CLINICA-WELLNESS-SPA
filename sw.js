@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clinical-wellness-v2';
+const CACHE_NAME = 'clinical-wellness-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -36,7 +36,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
-            // Cancella le vecchie cache (es. v1) per mostrare le modifiche
+            // Cancella le vecchie cache (es. v1, v2) per mostrare le modifiche
             return caches.delete(cacheName);
           }
         })
